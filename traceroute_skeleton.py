@@ -105,7 +105,7 @@ class TracerouteNoRoot:
             udp_socket.setsockopt(socket.IPPROTO_IP, socket.IP_TTL, ttl) 
 
 
-            udp_socket.setsockopt(socket.IPPROTO_IP, socket.IP_RECVERR, 1)
+            udp_socket.setsockopt(socket.IPPROTO_IP, IP_RECVERR, 1)
 
             # Set timeout
             udp_socket.settimeout(self.timeout)
