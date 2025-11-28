@@ -166,14 +166,14 @@ class TracerouteNoRoot:
                         
                         #Parse sock_extended_err
                         ee_errno, ee_origin, ee_type, ee_code, ee_pad, ee_info, ee_data = struct.unpack(
-                            "I B B B B I I", cmsg_data[:20]
+                            "I B B B B I I", cmsg_data[:16]
                         )
 
                         icmp_type = ee_type
                         icmp_code = ee_code
 
                         #Parse sockaddr_in 
-                        sockaddr_offset = 20
+                        sockaddr_offset = 16
                         sockaddr = cmsg_data[sockaddr_offset : sockaddr_offset + 8]
 
                         if len(sockaddr) == 8:
