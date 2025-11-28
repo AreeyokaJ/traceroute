@@ -21,6 +21,7 @@ PACKET_SIZE = 52
 ICMP_TIME_EXCEEDED = 11
 ICMP_DEST_UNREACHABLE = 3
 ICMP_ECHO_REPLY = 0
+IP_RECVERR = 11
 
 # ============================================================================
 # HELPER FUNCTIONS
