@@ -280,7 +280,9 @@ class TracerouteNoRoot:
         # and icmp_code is 'port unreacahble'. if so exit from the loop. otherwise run the loop until max_hops. #
         #########################################################################################################
         
-        
+        for i in range(1, MAX_HOPS + 1):
+            hop_info = self.probe_hop(i)
+            print(self.format_hop_output(hop_info))
         if not reached_destination:
             print(f"\nDestination not reached within {self.max_hops} hops")
 
