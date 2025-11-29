@@ -286,7 +286,7 @@ class TracerouteNoRoot:
             print(self.format_hop_output(hop_info))
 
             probes = hop_info['probes']
-            
+
             for probe in probes:
                 if probe['code'] == 3:
                     reached_destination = True
@@ -301,6 +301,9 @@ class TracerouteNoRoot:
 
 def main():
     trace = TracerouteNoRoot('www.princeton.edu')
+    #trace = TracerouteNoRoot('www.cs.columbia.edu')
+    #trace = TracerouteNoRoot('cs.nyu.edu')
+
     trace.run()
 
 if __name__ == "__main__":
