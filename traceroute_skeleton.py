@@ -284,7 +284,7 @@ class TracerouteNoRoot:
         for i in range(1, MAX_HOPS + 1):
             hop_info = self.probe_hop(i)
             print(self.format_hop_output(hop_info))
-            
+
             probes = hop_info['probes']
             
             for probe in probes:
