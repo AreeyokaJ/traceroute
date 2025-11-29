@@ -284,6 +284,17 @@ class TracerouteNoRoot:
         for i in range(1, MAX_HOPS + 1):
             hop_info = self.probe_hop(i)
             print(self.format_hop_output(hop_info))
+            
+            probes = hop_info['probes']
+            
+            for probe in probes:
+                if probe['code'] == 3:
+                    reached_destination = True
+                    break
+            
+            if reached_destination == True:
+                break
+
         if not reached_destination:
             print(f"\nDestination not reached within {self.max_hops} hops")
 
